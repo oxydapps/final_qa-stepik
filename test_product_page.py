@@ -19,21 +19,21 @@ def test_guest_can_add_product_to_basket(browser, promo_offer):
 
 @pytest.mark.xfail(reason="should be bug, because success message is displayed")
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
-    link = f"http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
     page.click_to_add_to_basket_button()
     page.should_not_be_success_message()
 
 def test_guest_cant_see_success_message(browser):
-    link = f"http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()   
     page.should_not_be_success_message()
 
 @pytest.mark.xfail(reason="should be bug, because success message is not disappeare")
 def test_message_disappeared_after_adding_product_to_basket(browser):
-    link = f"http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
     page.click_to_add_to_basket_button()
@@ -44,6 +44,7 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.should_be_login_link()
+<<<<<<< HEAD
 
 @pytest.mark.need_review
 def test_guest_can_go_to_login_page_from_product_page(browser):
@@ -53,6 +54,17 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page.go_to_login_page()
 
 @pytest.mark.need_review
+=======
+    
+@pytest.mark.need_review
+def test_guest_can_go_to_login_page_from_product_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    page = ProductPage(browser, link)  
+    page.open()
+    page.go_to_login_page()
+
+@pytest.mark.need_review
+>>>>>>> a927b2a9d88df10f0c62f5c62f7eb5462b0632c2
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
