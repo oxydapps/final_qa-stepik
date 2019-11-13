@@ -1,11 +1,16 @@
 from selenium.webdriver.common.by import By
 
+
+class BasketPageLocators():
+    CONTENT_BASKET = (By.CSS_SELECTOR, "#content_inner > p")
+    CONTENT_BASKET_IS_PRESENT = (By.CSS_SELECTOR, "#basket_formset")    
+
+
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     VIEW_BASKET = (By.CSS_SELECTOR, "span.btn-group > a.btn")
-    CONTENT_BASKET = (By.CSS_SELECTOR, "#content_inner > p")
-    CONTENT_BASKET_IS_PRESENT = (By.CSS_SELECTOR, "#basket_formset")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
